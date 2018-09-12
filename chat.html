@@ -1,0 +1,253 @@
+<!doctype <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="main.js"></script>
+    <style>
+        body {
+            background-color: rgb(236, 240, 236);
+        }
+        
+        .body {
+            width: 360px;
+            height: 520px;
+            margin: 8px auto;
+            background-image: linear-gradient(140deg, #da4816, #fe8431);
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 10px 30px rgb(150, 156, 150);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+        }
+        
+        .main {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 300px;
+            height: 420px;
+            margin: 16px 28px;
+            margin-bottom: 0px;
+            overflow: hidden;
+        }
+        
+        .header {
+            
+            margin-top: 30px;
+        }
+        
+        .header__hello {
+            display: flex;
+        }
+        
+        .header__text {
+            font-size: 1.8em;
+            
+        }
+        
+        .icon-svg {
+            width: 24px;
+            margin: 8px;
+        }
+        
+        .header__status {
+            margin-top: 30px;
+        }
+        
+        .text {
+            text-transform: uppercase;
+            opacity: 0.4;
+            font-size: 0.7em;
+            margin-top: 30px;
+        }
+        
+        .active__person {
+            margin-top: 8px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .active__person-avatar {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            
+        }
+        .avatar-name {
+            display: none;
+        }
+        
+         
+        .conver__person {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .conver__subs {
+            width: 120px;
+            height: 60px;
+        }
+        
+        .conver__subs {
+            position: relative;
+            background-color: rgba(248, 138, 72);
+            margin-top: 20px;
+            padding: 8px;
+            border: none;
+            border-radius: 10px;
+            color: #ffffff;
+            text-align: left;
+            word-wrap: normal;
+            font-size: 10px;
+            cursor: pointer;
+            opacity: 0.6;
+            box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .conver__avatar-icon {
+            margin-top: -14px;
+        }
+        
+       
+        .message__box {
+            display: flex;
+            height: 100px;
+            background: #fff;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            align-items: center;
+            justify-content: center;
+            padding-left: 24px;
+        }
+        
+        .message__box-text {
+            flex: 1;
+            color: rgb(141, 148, 148);
+            font-size: 16px;
+        }
+        
+        .message__box-icon {
+            display: flex;
+        }
+        
+        .message__box-icon img {
+            margin-right: 12px;
+        }
+        
+        
+        
+        
+        
+        .active__person-avatar:hover {
+            background: rgb(202, 201, 196);
+            border-radius: 10px;
+            border: none;
+            width: 76px;
+            opacity: 0.7;
+            transform: scale(1.2);
+            cursor: pointer;
+            font-size: 10px;
+            
+        }
+        
+        .active__person-avatar:hover .avatar-name {
+            display: block;
+        }
+        
+        .conver__subs:hover {
+            transform: scale(1.1)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <div class="main">
+            <div class="header">
+                <div class="header__hello">
+                    <div class="header__text">Hello!</div>
+                    <div class="header__icon">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 473.935 473.935" style="enable-background:new 0 0 473.935 473.935;" xml:space="preserve">
+                            <circle style="fill:#FFC10E;" cx="236.967" cy="236.967" r="236.967" />
+                            <circle style="fill:#333333;" cx="164.938" cy="155.232" r="37.216" />
+                            <circle style="fill:#333333;" cx="305.667" cy="155.232" r="37.216" />
+                            <path style="fill:#333333;" d="M343.257,316.862c-59.281,60.329-154.663,59.854-213.45-0.898
+		c-8.4-8.685-21.616,4.561-13.227,13.227c65.769,67.97,173.645,68.34,239.905,0.898
+		C364.944,321.479,351.721,308.245,343.257,316.862L343.257,316.862z" />
+                        </svg>
+
+                    </div>
+                </div>
+                <div class="header__status">
+                    Welcome to convertBox. Let's chat &mdash start a new conversation below.</div>
+                <div class="active">
+
+
+                    <div class="active__text text">
+                        Active Agents
+                    </div>
+                    <div class="active__person">
+                        <div class="active__person-avatar">
+                            <img src="images/boy.png" alt="avatar" class="avatar"><span class="avatar-name">Alex Di</span>
+                        </div>
+                        <div class="active__person-avatar">
+                            <img src="images/girl.png" alt="avatar" class="avatar"><span class="avatar-name">Liza Betray</span>
+                        </div>
+                        <div class="active__person-avatar">
+                            <img src="images/man (1).png" alt="avatar" class="avatar"><span class="avatar-name">Jack Terrman</span>
+                        </div>
+                        <div class="active__person-avatar">
+                            <img src="images/man (2).png" alt="avatar" class="avatar"><span class="avatar-name">David Hithrow</span>
+                        </div>
+                        <div class="active__person-avatar">
+                            <img src="images/girl (1).png" alt="avatar" class="avatar"><span class="avatar-name">Laura Pryer</span>
+                        </div>
+                    </div>
+
+                    <div class="conver">
+                        <div class="conver__text text">Recent Conversations</div>
+                        <div class="conver__person">
+                            <div class="conver__subs">
+                                <img src="images/man (3).png" alt="avatar" class="conver__avatar-icon"> Hey! How are you? What's your plan tonight?
+                            </div>
+                            <div class="conver__subs">
+                                <img src="images/girl (1).png" alt="avatar" class="conver__avatar-icon"> Hi Steve, I need to see you)))
+                            </div>
+                            <div class="conver__subs">
+                                <img src="images/man.png" alt="avatar" class="conver__avatar-icon"> Recall me please, man
+                            </div>
+                            <div class="conver__subs">
+                                <img src="images/girl.png" alt="avatar" class="conver__avatar-icon"> I send you a message, please read it as soon as possible
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="message__box">
+            <div class="message__box-text">Start a conversation</div>
+            <div class="message__box-icon">
+                <img src="images/folder.png" alt="icon" class="message__box-icon img">
+                <img src="images/smile.png" alt="icon" class="message__box-icon img">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
